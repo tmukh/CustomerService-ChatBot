@@ -1,6 +1,6 @@
 # Customerservice Chatbot
 
-This project is a customer service chatbot that is built with MongoDB, Jupyter, NodeJS, Django, and React. The chatbot is designed to provide a conversational interface for users to interact with customer service representatives.
+This project is a customer service chatbot that is built with MongoDB, Jupyter, NodeJS, and React. The chatbot is designed to provide a conversational interface for users to interact with customer service representatives.
 
 ## Backend
 
