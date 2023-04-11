@@ -19,3 +19,7 @@ The server of the chatbot is built with NodeJS. NodeJS is used as the server-sid
 The frontend of the chatbot is built with React. React is a popular frontend library for building dynamic and interactive user interfaces. It is used to build the chatbot's user interface, handle user input, and display chatbot responses.
 
 Overall, this chatbot is designed to provide a seamless and efficient customer service experience for users. With its powerful backend, versatile programming language, scalable server, and dynamic frontend, it is an excellent solution for any business looking to provide customer service through a chatbot.
+
+
+ <img src="https://img.shields.io/github/last-commit/AwsamAgbarya/CustomerService-ChatBot?color=blue">
+ <img src="https://img.shields.io/github/commit-activity/m/AwsamAgbarya/CustomerService-ChatBot?style=plastic">
