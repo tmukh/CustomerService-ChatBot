@@ -5,8 +5,8 @@ function Note() {
 
     const [notes , setNewNotes] = useState(null)
     const [formNote, setFormNote] = useState({
-      title: "",
-      content: ""
+      titties: "",
+      content: "",
     })
 
     useEffect(() => {
@@ -33,17 +33,17 @@ function Note() {
           method: "POST",
           url:"/notes/",
           data:{
-            title: formNote.title,
-            content: formNote.content
-           }
+            titties: formNote.titties,
+            content: formNote.content           }
         })
         .then((response) => {
           getNotes()
         })
 
         setFormNote(({
-          title: "",
-          content: ""}))
+          titties: "",
+          content: "",
+}))
 
         event.preventDefault()
     }
@@ -70,15 +70,16 @@ function Note() {
      <div className=''>
 
         <form className="create-note">
-          <input onChange={handleChange} text={formNote.title} name="title" placeholder="Title" value={formNote.title} />
+          <input onChange={handleChange} text={formNote.titties} name="titties" placeholder="titties" value={formNote.titties} />
           <textarea onChange={handleChange} name="content" placeholder="Take a note..." value={formNote.content} />
           <button onClick={createNote}>Create Post</button>
+
         </form>
 
         { notes && notes.map(note => <List
         key={note.id}
         id={note.id}
-        title={note.title}
+        titties={note.titties}
         content={note.content} 
         deletion ={DeleteNote}
         />
