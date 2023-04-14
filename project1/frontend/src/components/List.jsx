@@ -4,7 +4,7 @@ function List(props){
 }
   return (
       <div className="note">
-        <h1 >  Title: {props.title} </h1>
+        <h1 >  Title: {props.titties} </h1>
         <p > Content: {props.content}</p>
         <button onClick={handleClick}>Delete</button>
       </div>
