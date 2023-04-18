@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME' : 'testingdb',
@@ -92,6 +92,7 @@ DATABASES = {
         },
     },
 }
+"""
 
 
 # Password validation
