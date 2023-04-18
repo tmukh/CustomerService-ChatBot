@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #my_apps
     'core.apps.CoreConfig',
-    'rest_framework'
+    'rest_framework',
+    'djongo'
 ]
 
 MIDDLEWARE = [
@@ -79,9 +80,17 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'djongo',
+        'NAME' : 'testingdb',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://meow:123@chatbot.g6qvdwt.mongodb.net/testingdb?retryWrites=true&w=majority',
+            'username': 'meow',
+            'password': '123',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1',
+        },
+    },
 }
 
 
