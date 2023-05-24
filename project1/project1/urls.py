@@ -14,7 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from core.views import front, note, note_detail
+from core.views import front, question
 from django.contrib import admin
 from django.urls import path
 from core.views import front
@@ -23,7 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", front, name="front"),
     #URL used to direct a chat message from the client to the server
-    path("question/", note, name="question"),
-    # path("notes/", note, name="note"),
-    # path("notes/<int:pk>/", note_detail, name="detail"),
+    path("question/", question, name="question"),
 ]

@@ -1,6 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 
+
 // Interface to save the structure of the current message
 interface Props {
   msg:string,

@@ -25,29 +25,26 @@ const buttonStyle = {
   display: "inline"
 }
 
+interface props {
+  onAddedMessage: (text:string,time:string,question:boolean) => void 
+}
+
 //ChatBox to enter text message
-function TextArea() {
+function TextArea(prop:props) {
 
   // useState function to bind message as a changing variable
   const [message,setMessage] = useState('');
 
-  // A function to add a message (question/response) to the display 
-  function addMessage(text:string, time:string, question:boolean) {
-    
-  }
-
   // Upon typing/Removing a message from the textbox, it changes messages value corrospondingly and logs it
   const handleMessageChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setMessage(event.target.value);
-    // Logging for debugging purposes
-    console.log(event.target.value);
   };
   
   // Function to handle Send Button clicking
   function handleClick() {
     let curr = new Date()
     // logging the message on screen
-    addMessage(message, curr.getHours().toString(), true);
+    prop.onAddedMessage(message, curr.getHours().toString(), true);
 
     // Sending the message to URL /question via POST method with the data of our message using AXIOS
     axios({
@@ -55,17 +52,22 @@ function TextArea() {
       url: "/question/",
       data: {
         type_of_msg: "question",
-        content: message,
+        content: message
       },
     }).then((response) => {
       let curr = new Date()
       // The response gets added to the screen for the client to see
-      addMessage(response.toString(), curr.getHours().toString(), true);
+      prop.onAddedMessage(response.data, curr.getHours().toString(), false);
     });
   }
 
   // A form for the user to use (TextBox + send button)
-  return <><form><input style={textStyle} value={message} onChange={handleMessageChange}></input><button type="submit" style={buttonStyle} onClick={handleClick}>Send</button></form></>;
+  return <>
+    <form>
+      <input style={textStyle} value={message} onChange={handleMessageChange}></input>
+      <button type="submit" style={buttonStyle} onClick={handleClick}>Send</button>
+    </form>
+  </>;
 }
 
 export default TextArea;
