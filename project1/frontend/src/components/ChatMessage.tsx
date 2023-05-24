@@ -1,11 +1,14 @@
 import React from "react";
 import { Fragment } from "react";
 
+// Interface to save the structure of the current message
 interface Props {
   msg:string,
   currDate:string
   question:boolean
 }
+
+// Move styles to Css file when done debugging
 const answerStyle = {
   width: "80%",
   height: "20px",
@@ -22,11 +25,12 @@ const questionStyle = {
 };
 
 function ChatMessage(props:Props) {
-  
+  // Empty message case
   if (props.msg === null || props.msg === "") {
     return <></>;
   }
-
+  
+  // Display of a message
   return (
     <div style={props.question ? answerStyle : questionStyle}>
       <p className="alert alert-dark">

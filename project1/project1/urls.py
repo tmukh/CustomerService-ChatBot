@@ -22,6 +22,8 @@ from core.views import front
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", front, name="front"),
-     path("notes/", note, name="note"),
-    path("notes/<int:pk>/", note_detail, name="detail"),
+    #URL used to direct a chat message from the client to the server
+    path("question/", note, name="question"),
+    # path("notes/", note, name="note"),
+    # path("notes/<int:pk>/", note_detail, name="detail"),
 ]
