@@ -9,7 +9,7 @@ interface Props {
   question:boolean
 }
 
-// Move styles to Css file when done debugging
+// Move styles to Css file when done debugging lmao
 const answerStyle = {
   width: "80%",
   height: "20px",
